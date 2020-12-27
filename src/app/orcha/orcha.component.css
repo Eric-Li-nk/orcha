@@ -1,0 +1,66 @@
+.Partie1{
+    padding: 30px;
+}
+
+.Partie2{
+    padding: 30px;
+}
+
+.Partie3{
+    padding: 30px;
+}
+
+.btn_learnmore{
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.img_orcha1{
+    display:block;
+    max-width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.img_orcha2{
+    display:block;
+    max-width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.img_orcha3{
+    display:block;
+    max-width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.presentation_orcha{
+    text-align:center;
+}
+
+.presentation_orcha1{
+    color:gray;
+    text-align:center;
+}
+
+.presentation_orcha2{
+    color:gray;
+    text-align:center;
+}
+
+.presentation_orcha3{
+    color:gray;
+    text-align:center;
+}
+
+h3{
+    color:black;
+    text-align:center;
+}

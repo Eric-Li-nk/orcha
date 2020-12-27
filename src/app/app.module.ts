@@ -1,16 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
+import { FormsModule, Validators, FormBuilder } from '@angular/forms';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   routingComponents,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CommonModule,
+    CKEditorModule,
+    FormsModule,
+    RouterModule,
+    Validators,
+    FormBuilder,
   ],
   providers: [],
   bootstrap: [AppComponent]
