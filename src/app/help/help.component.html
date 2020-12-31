@@ -1,0 +1,21 @@
+<div class="help">
+    <h1>Q&A</h1>
+    <div class="box">
+        <div class="faq">
+            <details *ngFor="let q of qliste, index as i">
+                <summary>{{qliste[i]}}</summary>
+                <p class="reponse">{{repliste[i]}}.</p>
+            </details>
+        </div>
+    </div>
+    <div class="send_mail">
+        <form class="demande" action="mailto:contact@yourdomain.com" method="POST" enctype="multipart/form-data" name="EmailTestForm">
+            <p>Your question isn't here ? Send us a mail !</p>
+            <p>Email :</p>
+            <input type="email" size="35" placeholder="Your email" name="VisitorEmail">
+            <p>Message:</p>
+            <textarea placeholder="Your questions" name="VisitorComment" rows="8" cols="30"></textarea><br><br>
+            <input type="submit" value="Submit"><br><br>
+        </form>
+    </div>
+</div>

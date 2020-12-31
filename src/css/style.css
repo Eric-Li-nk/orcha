@@ -1,0 +1,130 @@
+/*CSS menu*/
+nav{
+  width: 100%;
+  background-color: #424558;
+}
+nav ul{
+  margin: 0px;
+  padding: 0px;
+}
+
+nav li{
+  list-style-type: none;
+  float: left;
+}
+
+nav li:hover a{
+  padding: 15px 30px 20px 30px;
+}
+
+nav a{
+  display: inline-block;
+  text-decoration: none;
+  padding: 20px 30px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+}
+
+.menu{
+  display: table;
+  margin: 0 auto;
+}
+
+.menu_Orcha:hover{
+  border-top: 5px solid red;
+  background-color: rgba(200,100,100,0.30);
+}
+
+.menu_Home:hover{
+  border-top: 5px solid orange;
+  background-color: rgba(200,150,100,0.30);
+}
+
+.menu_Editor:hover{
+  border-top: 5px solid yellow;
+  background-color: rgba(200,200,100,0.30);
+}
+
+.menu_Contact:hover{
+  border-top: 5px solid green;
+  background-color: rgba(100,200,100,0.30);
+}
+
+.menu_Help:hover{
+  border-top: 5px solid blue;
+  background-color: rgba(100,100,200,0.30);
+}
+
+.menu_Login:hover{
+  border-top: 5px solid purple;
+  background-color: rgba(200,100,200,0.30);
+}
+
+/*CSS Contenu*/
+.contenu{
+  width: 100%;
+}
+
+
+/*CSS footer*/
+footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: #f1f1f1;
+}
+
+.footer_contenu {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 25px 0 25px;
+}
+
+.bloc {
+  width: 25%;
+  margin: 0 30px;
+}
+
+.contenu_left h3,
+.contenu_center h3,
+.contenu_right h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+
+.contenu_left p{
+    padding: 5px 0;
+}
+
+.contenu_left a{
+  text-decoration: none;
+  color: blue;
+}
+
+.liste_réseaux {
+    list-style-type: none;
+}
+
+.liste_réseaux {
+    position: relative;
+    padding: 0;
+    right: 20px;
+}
+.liste_réseaux img {
+    width: 40px;
+    margin: 10px 10px;
+}
+.liste_réseaux a {
+    text-decoration: none;
+    color: blue;
+    display: flex;
+    align-items: center;
+}
+
+.contenu_right img {
+  width: 250px;
+  margin: 10px 10px;
+}

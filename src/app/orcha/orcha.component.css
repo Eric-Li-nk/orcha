@@ -1,0 +1,41 @@
+.orcha h2{
+    text-align: center;
+}
+
+.orcha img{
+    width: 750px;
+}
+
+.orcha_partie1, .orcha_partie2, .orcha_partie3{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 25px 0 25px;
+}
+
+.partie1_left, .partie2_right, .partie3_left, .partie1_right, .partie2_left, .partie3_right{
+    width: 50%;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+.text{
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+.p_btn{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn_learnmore{
+    background-color: #4CAF50;
+    color: white;padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

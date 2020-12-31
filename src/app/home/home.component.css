@@ -1,0 +1,13 @@
+.home_partie1{
+  text-align:center;  
+}
+
+.home_partie2{
+  width: 700px;
+  margin: 0 auto;
+  padding: 25px 0 25px;
+}
+
+.home_partie2 h2{
+  text-align: center;
+}
