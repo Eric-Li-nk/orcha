@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+     <head>
+          <title>{{title}}</title>
+          <meta charset="utf-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <!-- Main css -->
+          <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+     </head>
+     
+     <body>
+     <!-- Menu Section -->
+          <nav>
+               <div class="menu">
+                    <ul>
+                              <li class="menu_Orcha"><a routerLink ="">Orcha language</a></li>
+                              <li class="menu_Home"><a routerLink ="/home">Home</a></li>
+                              <li class="menu_Editor"><a routerLink ="/editor">Editor</a></li>
+                              <li class="menu_Contact"><a a routerLink ="/contact">Contact</a></li>
+                              <li class="menu_Help"><a routerLink ="/help">Help</a></li>
+                              <li class="menu_Login"><a routerLink = "/login">Login</a></li>
+                    </ul>
+               </div>
+          </nav>     
+
+     <!-- Contenu Section -->
+          <div class="contenu">
+               <router-outlet></router-outlet>
+          </div>
+
+     <!-- Footer Section -->
+          <footer>
+               <div class="footer_contenu">
+                    <div class="bloc contenu_left">
+                         <h3>Rester en contact</h3>
+                         <p><a href="#">Taff_corporation@gmail.com</a></p>
+                         <p>99 Avenue Jean Baptiste Clément, 95120 Ermont</p>
+                    </div>
+                    <div class="bloc contenu_center">
+                         <h3>Nos réseaux</h3>
+                         <ul class="liste_réseaux">
+                              <li><a href="#"><img src="/assets/images/facebook.png" alt="logo facebook">Facebook/Taff_corporation</a></li>
+                              <li><a href="#"><img src="/assets/images/twitter.png" alt="logo twitter">Twitter/Taff_corporation</a> </li>
+                              <li><a href="#"><img src="/assets/images/instagram.png" alt="logo instagram">Instagram/Taff_corporation</a></li>
+                         </ul>
+                    </div>
+                    <div class="bloc contenu_right">
+                         <h3>Notre entreprise</h3>
+                         <p>© 2020 Projet  - Sorbonne Paris-Nord.</p>
+                         <img src="../assets/images/logo_taff_no_bg.png" alt="Logo Taff_corporation">
+                    </div>
+               </div>
+          </footer>
+                   
