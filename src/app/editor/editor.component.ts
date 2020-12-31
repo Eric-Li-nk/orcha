@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+<<<<<<< HEAD
+=======
+import { Validators, FormBuilder, } from '@angular/forms';
+>>>>>>> e07cdb26388605f69e88b9424efb8c1a99abe7bc
 
 
 @Component({
@@ -25,8 +29,13 @@ export class EditorComponent implements OnInit {
         "version(\\s*):(\\s*)(?<version>.*?)",
     ];
 
+<<<<<<< HEAD
     constructor() {
 
+=======
+    constructor(private formBuilder: FormBuilder) {
+        this.compile();
+>>>>>>> e07cdb26388605f69e88b9424efb8c1a99abe7bc
     }
     
     public onChange ({ editor } : ChangeEvent) {
@@ -41,6 +50,7 @@ export class EditorComponent implements OnInit {
     public onLoad() {
         alert("Importer");
     }
+<<<<<<< HEAD
     public import() {
         alert("Importer");
     }
@@ -54,3 +64,20 @@ export class EditorComponent implements OnInit {
      }
 
 }
+=======
+
+    public compile() {
+        const data = this.orcha.data;
+        var i;
+        for (i = 0; i < this.pattern.length; i++) {
+            this.form = this.formBuilder.group({
+            data:['',[Validators.required,Validators.pattern(this.pattern[i])]]});
+            console.log("Pas de pb");
+        }
+    }
+
+    ngOnInit() {
+    }
+
+}
+>>>>>>> e07cdb26388605f69e88b9424efb8c1a99abe7bc

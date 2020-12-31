@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
      <head>
           <title>{{title}}</title>
           <meta charset="utf-8"/>
@@ -52,3 +53,67 @@
                </div>
           </footer>
                    
+=======
+  <head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Main css -->
+<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
+
+    
+  </head>
+
+<body>
+
+<!-- Navigation section  -->
+
+<nav>
+      <label for="menu-mobile" class="menu-mobile">Developper le Menu</label>
+      <input type="checkbox" id="menu-mobile" role="button">
+      <ul>   
+        
+        <li class="menu-accueil"><a routerLink ="">Orcha language</a></li>
+        <li class="menu-accueil"><a routerLink ="/home">Home</a></li>
+        <li class="menu-accueil"><a routerLink ="/editor">Editor</a></li>
+        <li class="menu-accueil"><a a routerLink ="/contact">Contact</a></li>
+        <li class="menu-accueil"><a routerLink ="/help">Help</a></li>
+        <li id="connexion" class="menu-accueil"><a routerLink = "/login">Login</a></li>
+
+      </ul>
+</nav>
+
+
+<!-- Home Section -->
+
+<div class="div_contenu">
+<router-outlet></router-outlet>
+</div>
+     
+<!-- Footer Section -->
+<div class="div_footer">
+<hr>
+<footer>
+          <div class="container">
+               <div class="row">
+               
+               <div class="column">
+                    <p>99 Avenue Jean Baptiste Clément, 95120 Ermont</p>
+               </div>
+
+               <div class="column">
+                    <p>Contactez-nous maintenant à : 
+                    <a href="mailto:mailprojet">mettremailprojet@gmail.com</a>
+                    <ul class=reseaux>
+                         <li> <a href="https://www.facebook.com/"><img src="../assets/images/facebook.png" alt="facebook" height="55" width="55" /></a></li>
+                         <li> <a href="https://twitter.com/"><img src="../assets/images/twitter.png" alt="twitter" height="55" width="55" /></a></li>
+                         <li> <a href="https://www.instagram.com/"><img src="../assets/images/instagram.png" alt="instagram" height="55" width="55" /></a></li>
+                    </ul>
+               </div>
+
+               <div class="column">                    
+                         <p>© 2020 Projet  - Sorbonne Paris-Nord.</p>
+                         <img src="../assets/images/logo_taff_no_bg.png" alt="Logo by ergun" class="img-responsive">
+>>>>>>> e07cdb26388605f69e88b9424efb8c1a99abe7bc

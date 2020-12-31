@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 div{
 	text-align: center;
 }
@@ -44,3 +45,147 @@ details summary{
 	display: inline-block; 
     text-align: center; 
 }
+=======
+
+/*---------------------------------------
+Typorgraphy              
+-----------------------------------------*/
+
+
+
+h1,h2,h3,h4,h5,h6,special {
+font-style: normal;
+font-weight: 300;
+letter-spacing: 0.5px;
+}
+
+special {
+font-size: 40px;
+padding-bottom: 14px;
+
+border-bottom: 6px solid #2ee87f;
+background-color: lightgrey;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+
+special:hover {
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+h1 {
+font-size: 62px;
+padding-bottom: 14px;
+margin-bottom: 0px;
+
+}
+
+h2 {
+font-size: 32px;
+line-height: 46px;
+}
+
+h3 {
+font-size: 26px;
+}
+
+h4 {
+color: #666;
+font-size: 12px;
+font-weight: normal;
+letter-spacing: 2px;
+}
+
+p {
+padding: 2em;
+color: #777;
+font-size: 15px;
+font-weight: 300;
+line-height: 26px;
+letter-spacing: 0.2px;
+}
+
+strong {
+font-weight: 400;
+}
+
+.btn-success:focus {
+background-color: #000;
+border-color: transparent;
+}
+
+
+
+/*Page help*/
+
+#help{
+    margin-bottom: 5%;
+    scroll-behavior: smooth;
+    font-weight: 300;
+    font-style: normal;
+    font-style: 25px;
+    text-align: center;
+
+  }
+  
+  #scroll{
+    height: 25% ;
+    width: 18%;
+    float: left;
+    border:3px ridge grey;
+    border-radius: 4px;
+    background-color: rgb(220, 220, 220);
+    display: table;
+  }
+
+#scroll ul{
+    list-style: none;
+    font-size: 20px;
+    padding:auto;
+}
+
+#scroll li {
+  margin-top: 15%;
+}
+
+ #scroll li:hover{
+     background-color: rgb(165, 165, 165);
+      color: white;
+  }
+#scroll label{
+  text-align: left;
+}
+  
+  .paragraphe{
+    margin: auto;
+    width: 63%;
+    background-color: rgb(235, 235, 235);
+  }
+  .paragraphe ul{
+      margin: auto;
+      margin-right: 20%;
+      list-style: none;
+      width: 60%;
+  }
+
+  .ques {
+      color: white;
+      background-color: black;
+      border: 1px grey;
+      border-radius: 5px;
+  }
+
+  .paragraphe h2 {
+      font-weight: bold;
+  }
+a {
+    text-decoration: none!important;
+}
+
+  a:hover, a:active, a:focus {
+    color: #ffffff;
+    outline: none;
+  }
+>>>>>>> e07cdb26388605f69e88b9424efb8c1a99abe7bc
