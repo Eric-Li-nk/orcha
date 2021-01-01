@@ -17,10 +17,17 @@
   
     <div class="container" id='bonus'>
         <ul>
-            <li class="sign">Don't have an account yet ? <a routerLink="/sign"> Sign up !</a></li>
+            <li class="register">Don't have an account yet ? <a routerLink="/register"> Register !</a></li>
             <li class="pswf">Forgot <a routerLink="/password">password?</a></li>
         </ul>
 
     </div> 
   </form>
+</div>
+
+<div id="theList">
+  <h2>Liste de tout les utilisateurs inscrits /!\ à Supprimer à la fin du projet /!\</h2> <!-- à Supprimer -->
+  <ul>
+    <li *ngFor="let item of Users">{{item.username}} | {{item.password}} | {{item.email}} </li>
+  </ul>
 </div>

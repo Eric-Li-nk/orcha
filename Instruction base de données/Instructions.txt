@@ -1,0 +1,29 @@
+Mettez le dossier "api" dans le dossier "www" de wamp manager
+
+Pour créer la base de données vous pouvez utilisez mysql de wampserver ou télécharger mysql directement
+Par défaut j'ai mit comme utilisateur le root et le mot de passe c'est "123456789"
+mais vous pouvez juste changer d'utilisateur et mot de passe de bdd dans le fichier "Model.php"
+Pour créer la bdd dans le terminal mysql faite :
+
+CREATE DATABASE IF NOT EXISTS BaseDeDonnees;
+
+Pour utiliser la BDD: 	
+
+	USE BaseDeDonnees;
+
+Pour se connecter directement à la base de données : 	
+
+	mysql -h [localisation du serveur] -u [nom d'utilisateur] -p[mot de passe] BaseDeDonnees;
+
+
+CREATE TABLE IF NOT EXISTS Utilisateurs(
+    id INT(10) AUTO_INCREMENT, 
+    username VARCHAR(30) NOT NULL,
+    password VARCHAR(30) NOT NULL,
+    email VARCHAR(30),
+    PRIMARY KEY (id)
+);
+
+Pour ajouter des utilisateurs : 
+
+    INSERT INTO Utilisateurs (username,password,email) VALUES ("test","motdepasse123","email@gmail.com");

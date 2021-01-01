@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { OrchaComponent } from './orcha/orcha.component';
 import { PasswordComponent } from './password/password.component';
-import { SignComponent } from './sign/sign.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {path:'contact', component: ContactComponent},
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'password', component:PasswordComponent},
-  {path:'sign', component:SignComponent},
+  {path:'register', component:RegisterComponent},
   {path:'', component:OrchaComponent}
 ];
 
@@ -25,4 +25,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ContactComponent, EditorComponent, HelpComponent, HomeComponent, LoginComponent, OrchaComponent, PasswordComponent, SignComponent]
+export const routingComponents = [ContactComponent, EditorComponent, HelpComponent, HomeComponent, LoginComponent, OrchaComponent, PasswordComponent, RegisterComponent]

@@ -6,11 +6,18 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from "@angular/common/http";
+import { MustMatchDirective } from './_helpers/must-match.directive';
+import { ValidateUsernameDirective } from './_helpers/validate-username.directive';
+import { ValidateEmailDirective } from './_helpers/validate-email.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
    routingComponents,
+   MustMatchDirective,
+   ValidateUsernameDirective,
+   ValidateEmailDirective
   ],
   imports: [
     BrowserModule,
@@ -19,6 +26,7 @@ import { RouterModule } from '@angular/router';
     CKEditorModule,
     FormsModule,
     RouterModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

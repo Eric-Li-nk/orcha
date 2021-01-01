@@ -1,0 +1,68 @@
+<div class="Register" [hidden]="submitted" >
+  <h1>Register</h1>
+  <form #inscription="ngForm" (submit)="addUser(inscription)" [mustMatch]="['password','passwordconfirm']" novalidate>
+    <div class="container">
+      
+      <label for="username"><b>Username</b></label>
+      <input type="text" class="" id="username" 
+            placeholder="Enter Username" name="username" 
+            [(ngModel)]="User.username" #username="ngModel"
+            appValidateUsername
+            required>
+
+        <div *ngIf="username.touched && username.errors?.required"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          Username is required 
+        </div>
+        <div *ngIf="username.errors?.userNameNotAvailable"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          Username is taken
+        </div>
+      
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" class="" id="password" 
+            placeholder="Enter Password" name="password" 
+            [(ngModel)]="User.password" #password="ngModel"
+            required>
+
+        <div [hidden]="password.valid || password.pristine"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          Password is required 
+        </div>
+            
+
+      <label for="passwordconfirm"><b>Confirm password</b></label>
+      <input type="password" class="" id="passwordconfirm" 
+            placeholder="Confirm Password" name="passwordconfirm" 
+            [(ngModel)]="passwordconfirm.passwordconfirm" #passwordconfirm="ngModel"
+            required>
+
+        <div *ngIf="passwordconfirm.touched && passwordconfirm.errors?.required"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          The password confirmation is required
+        </div>
+        <div *ngIf="passwordconfirm.errors?.mustMatch"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          The passwords doesn't match
+        </div>
+      
+
+      <label for="email"><b>Email</b></label>
+      <input type="email" class="" id="email" 
+            placeholder="Enter Email" name="email" 
+            [(ngModel)]="User.email" #email="ngModel"
+            appValidateEmail
+            pattern=".+@.+\..+">
+
+        <div *ngIf="email.errors?.pattern"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          The email is not valid
+        </div>
+        <div *ngIf="email.errors?.emailNotAvailable"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+          The email is taken
+        </div>
+
+      <button type="submit" [disabled]="!inscription.valid">Sign up</button> <!-- Faire en sorte que le bouton soit grisée si jamais le formulaire n'est pas valide par exemple-->
+
+    </div>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h1>Compté ajouté avec succès !</h1> <!--S'affiche lorque le formulaire a été complété, le formulaire disparaît et cette ligne s'affiche-->
+</div>
