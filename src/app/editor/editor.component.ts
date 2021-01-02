@@ -9,16 +9,7 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
-    regex = [
-        /authors/,
-        /compute/,
-        /description/,
-        /domain/,
-        /receive/,
-        /send/,
-        /title/,
-        /version/,
-    ];
+    regex=/((authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
 
     constructor() { }
 
@@ -29,12 +20,7 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
     }
 
     public compile() {
-        var i =0;
-        var verif = true;
-        while (i<this.regex.length && verif) {
-            verif=this.regex[i].test(this.Data);
-            i++;
-        }
+        var verif=this.regex.test(this.Data);
         if (verif) {
             alert("Pas de problème");
         }
