@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { OutletContext } from '@angular/router';
 
 @Component({
     selector: 'app-editor',
@@ -20,12 +21,21 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
     }
 
     public compile() {
-        var verif=this.regex.test(this.Data);
+        var ligne=this.Data.split(/<br>|<p>/);
+        
+        console.log(ligne.length);
+        var i =0;
+        var verif = true;
+        while (i<ligne.length && verif) {
+            console.log(ligne[i]+"coucou");
+            verif=this.regex.test(ligne[i]);
+            i++;
+        }
         if (verif) {
             alert("Pas de problème");
         }
         else {
-            alert("Erreur");
+            alert("Erreur à la ligne"+i);
         }
     }
 
