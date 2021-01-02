@@ -4,6 +4,7 @@
             <li><button type="button" (click)="onSave()"><img src="../../assets/images/save.png" height="25" width="35"></button></li>
             <li><button type="button" (click)="onLoad()"><img src="../../assets/images/import.png" height="25" width="25"></button></li>
             <li><button type="button" (click)="export()"><img src="../../assets/images/run.png" height="25" width="25"></button></li>
+            <li><button type="button" (click)="compile()"><img src="../../assets/images/run.png" height="25" width="25"></button></li>
         </ul>
         <ckeditor #orcha name="orcha" [editor]="Editor" [data]="Data" tagName="textarea" (change)="onChange($event)"
          [config]="{ toolbar: [  ] }" [(ngModel)]="Data"

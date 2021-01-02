@@ -9,6 +9,16 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
+    regex = [
+        /authors/,
+        /compute/,
+        /description/,
+        /domain/,
+        /receive/,
+        /send/,
+        /title/,
+        /version/,
+    ];
 
     constructor() { }
 
@@ -16,6 +26,21 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
     public onChange ({ editor } : ChangeEvent) {
         const data = editor.getData();
         console.log (data);
+    }
+
+    public compile() {
+        var i =0;
+        var verif = true;
+        while (i<this.regex.length && verif) {
+            verif=this.regex[i].test(this.Data);
+            i++;
+        }
+        if (verif) {
+            alert("Pas de problème");
+        }
+        else {
+            alert("Erreur");
+        }
     }
 
     public onSave() {
