@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable} from 'rxjs';
 import { Router } from '@angular/router';
 import { User } from "../_models/user";
+import { Project } from '../_models/project';
 import { map } from "rxjs/operators";
 
 @Injectable({
@@ -41,6 +42,32 @@ export class UserService {
     this.router.navigateByUrl('/login');
   }
 
+  register(user: User) {
+    return this.http.post(`${this.baseUrl}/register`, { data: user });
+  }
+
+  createProject(id, projectName, content) {
+    return this.http.post<Project>(`${this.baseUrl}/createProject`, { id, projectName, content } )
+      .pipe(map( res => {
+        return new Project(projectName, content);
+      }));
+  }
+
+  updateProject(id, projectName, content) {
+    return this.http.put<Project>(`${this.baseUrl}/updateProject`, { id, projectName, content } )
+      .pipe(map( res => {
+        return new Project(projectName, content);
+      }));
+  }
+
+  deleteProject(id, projectName) {
+    return this.http.post(`${this.baseUrl}/deleteProject`, { id, projectName} )
+  }
+
+  getProjectsTable(id) {
+    return this.http.post<Project[]>(`${this.baseUrl}/projectsTable`, { id })
+  }
+
   getAll() {
     return this.http.get<User[]>(`${this.baseUrl}/list`);
   }
@@ -51,10 +78,5 @@ export class UserService {
   getEmails() {
     return this.http.get<string[]>(`${this.baseUrl}/emails`);
   }
-
-  register(user: User) {
-    return this.http.post(`${this.baseUrl}/register`, { data: user });
-  }
-
 
 }
