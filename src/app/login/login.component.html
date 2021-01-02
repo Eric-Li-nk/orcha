@@ -1,16 +1,35 @@
 <div class="login">
   <h1>Login</h1>
-  <form action="action_page.php" method="post">
+  <form #login="ngForm" (ngSubmit)="onSubmit()" method="post">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <div *ngIf="LoginNotValid">
+        <b> The username or the password is incorrect.</b>
+      </div>
+
+      <label for="username"><b>Username</b></label>
+      <input type="text" class="" 
+            placeholder="Enter Username" name="username" 
+            [(ngModel)]="User.username" #username="ngModel"
+            required>
+
+        <div *ngIf="username.touched && username.errors?.required"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+            Username is required 
+        </div>
+
+      <label for="password"><b>Password</b></label>
+      <input type="password" 
+            placeholder="Enter Password" name="password" 
+            [(ngModel)]="User.password" #password="ngModel"
+            required>
+
+        <div *ngIf="password.touched && password.errors?.required"> <!-- à faire: ajouter une classe à div pour que le message d'alerte soit plus élégant.  -->
+           Password is required 
+        </div>
   
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button type="submit">Login</button>
-      <label>
-        
+      <button type="submit" [disabled]="!login.valid" >Login</button>
+      
+      <label for="remember">
       <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
     </div>
@@ -23,6 +42,11 @@
 
     </div> 
   </form>
+</div>
+
+<div [hidden]="!validAuthentification">
+  <h1> Vous êtes connecté !</h1>
+  <p>Vous serez redirigé vers la page editor dans quelque instant.</p>
 </div>
 
 <div id="theList">

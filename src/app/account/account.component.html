@@ -1,0 +1,7 @@
+<div class="account">
+    <h2>Vos informations</h2>
+    <ul>
+        <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
+    </ul>
+    <a (click)="logout()">Se déconnecter</a>
+</div>

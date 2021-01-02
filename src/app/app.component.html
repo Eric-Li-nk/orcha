@@ -18,7 +18,8 @@
                               <li class="menu_Editor"><a routerLink ="/editor">Editor</a></li>
                               <li class="menu_Contact"><a a routerLink ="/contact">Contact</a></li>
                               <li class="menu_Help"><a routerLink ="/help">Help</a></li>
-                              <li class="menu_Login"><a routerLink = "/login">Login</a></li>
+                              <li class="menu_Login" *ngIf="!LoggedIn"><a routerLink = "/login">Login</a></li>
+                              <li class="menu_Account" *ngIf="LoggedIn"><a routerLink = "/account">Account</a></li>
                     </ul>
                </div>
           </nav>     

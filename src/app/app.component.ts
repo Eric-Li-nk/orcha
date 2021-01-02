@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './_models/user';
+import { UserService } from './_services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Orcha Editor';
+  LoggedIn: User;
+
+  constructor(private UserService: UserService) {
+    this.UserService.user.subscribe( x => this.LoggedIn = x);
+  }
 }

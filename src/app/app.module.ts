@@ -10,6 +10,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { MustMatchDirective } from './_helpers/must-match.directive';
 import { ValidateUsernameDirective } from './_helpers/validate-username.directive';
 import { ValidateEmailDirective } from './_helpers/validate-email.directive';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ValidateEmailDirective } from './_helpers/validate-email.directive';
    routingComponents,
    MustMatchDirective,
    ValidateUsernameDirective,
-   ValidateEmailDirective
+   ValidateEmailDirective,
+   AccountComponent
   ],
   imports: [
     BrowserModule,

@@ -17,7 +17,7 @@ export class RegisterComponent {
   passwordconfirm = "";
 
   addUser(form) {
-    this.UserService.store(this.User).subscribe();
+    this.UserService.register(this.User).subscribe();
     this.submitted = true;
     form.reset();
   }

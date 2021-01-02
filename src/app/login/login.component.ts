@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from "../_models/user";
 import { UserService } from "../_services/user.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,37 @@ import { UserService } from "../_services/user.service";
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private UserService: UserService) { }
+  constructor(
+    private UserService: UserService,
+    private router: Router) { 
+      if (this.UserService.userValue) {
+        this.router.navigateByUrl("/");
+      }
+     }
+
+  submitted = false;
+  LoginNotValid = false;
+  validAuthentification = false
+  User = new User("","",-1);
+
+  onSubmit() {
+    this.submitted = true;
+    this.UserService.login(this.User.username, this.User.password)
+        .subscribe({
+          next: () => {
+            this.validAuthentification = true
+            this.LoginNotValid = false;
+            setTimeout(() => {
+              this.router.navigateByUrl("/editor");
+            }, 3000)
+          },
+          error: err => {
+            this.submitted = false;
+            this.LoginNotValid = true;
+          }
+    });
+    
+  }
 
   Users: User[];
   error='';
