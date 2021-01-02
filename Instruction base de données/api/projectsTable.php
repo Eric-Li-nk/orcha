@@ -6,8 +6,8 @@ $postdata = file_get_contents("php://input");
 
 if(isset($postdata) && !empty($postdata)) {
     $data = json_decode($postdata);
-    $model->addUser($data);
-    $id = $model->findUserId($data);
-    $model->addProjectsTable($id);
+    $projectsTable = $model->getProjectsTable($data);
+    echo json_encode($projectsTable);
+
 }
 ?>

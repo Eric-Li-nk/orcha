@@ -30,6 +30,14 @@ class Model {
         return $requete->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    public function getProjectsTable($data){
+        $id = trim($data->id);
+        $numProject = 'projects'.$id;
+        $requete = $this->bd->prepare("SELECT * FROM $numProject");
+        $requete->execute();
+        return $requete->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function getUsernames(){
         $requete = $this->bd->prepare('SELECT username FROM Utilisateurs');
         $requete->execute();
@@ -50,6 +58,39 @@ class Model {
         $requete->execute();
     }
 
+    public function addProjectsTable($data){
+        $id = $data["id"];
+        $numProject = 'projects'.$id;
+        $requete = $this->bd->prepare("CREATE TABLE IF NOT EXISTS $numProject (projectName VARCHAR(50) NOT NULL,content TEXT,PRIMARY KEY(projectName))");
+        $requete->execute();
+    }
+
+    public function addProject($data){
+        $id = $data->id;
+        $numProject = 'projects'.$id;
+        $requete = $this->bd->prepare("INSERT INTO $numProject values (:projectName, :content)");
+        $requete->bindValue(':projectName', $data->projectName);
+        $requete->bindValue(':content', $data->content);
+        $requete->execute();
+    }
+
+    public function updateProject($data){
+        $id = $data->id;
+        $numProject = 'projects'.$id;
+        $requete = $this->bd->prepare("UPDATE $numProject SET content=:content WHERE projectName=:projectName");
+        $requete->bindValue(':projectName', $data->projectName);
+        $requete->bindValue(':content', $data->content);
+        $requete->execute();
+    }
+
+    public function deleteProject($data){
+        $id = $data->id;
+        $numProject = 'projects'.$id;
+        $requete = $this->bd->prepare("DELETE FROM $numProject WHERE projectName=:projectName");
+        $requete->bindValue(':projectName', $data->projectName);
+        $requete->execute();
+    }
+
     public function findUser($data){
         $requete = $this->bd->prepare("SELECT * FROM Utilisateurs where username=:username and password=:password");
         $requete->bindValue(':username',trim($data->username));
@@ -58,6 +99,15 @@ class Model {
         return $requete->fetch(PDO::FETCH_ASSOC);
 
     }
+
+    public function findUserId($data){
+        $requete = $this->bd->prepare("SELECT id FROM Utilisateurs where username=:username");
+        $requete->bindValue(':username',trim($data->data->username));
+        $requete->execute();
+        return $requete->fetch(PDO::FETCH_ASSOC);
+    }
+
+
 
 }
 ?>

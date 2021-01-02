@@ -6,6 +6,6 @@ $postdata = file_get_contents("php://input");
 
 if(isset($postdata) && !empty($postdata)) {
     $data = json_decode($postdata);
-    $model->addUser($data);
+    $model->updateProject($data);
 }
 ?>
