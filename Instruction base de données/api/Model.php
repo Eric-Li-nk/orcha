@@ -50,5 +50,14 @@ class Model {
         $requete->execute();
     }
 
+    public function findUser($data){
+        $requete = $this->bd->prepare("SELECT * FROM Utilisateurs where username=:username and password=:password");
+        $requete->bindValue(':username',trim($data->username));
+        $requete->bindValue(':password',trim($data->password));
+        $requete->execute();
+        return $requete->fetch(PDO::FETCH_ASSOC);
+
+    }
+
 }
 ?>
