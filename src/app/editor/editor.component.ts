@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
+import { saveAs } from 'file-saver';
 
 @Component({
     selector: 'app-editor',
@@ -9,6 +10,7 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
+    public fileName = "Nom de projet par défaut";
 
     constructor() { }
 
@@ -27,9 +29,19 @@ import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
     }
 
     public export() {
-        alert("Export")
+        let data = new Blob([this.Data], {type: 'text/plain'});
+        saveAs(data, this.fileName + ".txt");
     }
 
+    import(fileList: FileList) {
+        let file = fileList[0];
+        let fileReader = new FileReader();
+        let self = this;
+        fileReader.onloadend = function(x) {
+            self.Data = fileReader.result as string;
+        }
+        fileReader.readAsText(file);
+    }
     ngOnInit () {
 
      }
