@@ -13,19 +13,19 @@ import { User } from '../_models/user';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
-    regex=/((authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
-    public fileName = "Nom de projet par défaut";
+    regex=/^((authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
+  /*  public fileName = "Nom de projet par défaut";
     public ProjectList: Project[];
     public LoggedUser = JSON.parse(localStorage.getItem("user")) as User;
     public id = this.LoggedUser.id;
-
+*/
     constructor(private UserService: UserService) { 
         
     }
 
     ngOnInit () {
         
-        this.UserService.getProjectsTable(this.id)
+     /*   this.UserService.getProjectsTable(this.id)
             .subscribe({
                 next: ProjectsTable => {
                     this.ProjectList = ProjectsTable as Project[];
@@ -33,7 +33,7 @@ import { User } from '../_models/user';
                 error: err => {
                     console.error(err);
                 }
-            })
+            })*/
      }
     
     public onChange ({ editor } : ChangeEvent) {
@@ -42,13 +42,11 @@ import { User } from '../_models/user';
     }
 
     public compile() {
-        var ligne=this.Data.split( /\r?\n/ );
-        
-        console.log(ligne.length);
-        var i =0;
+        var ligne=this.Data.split("<p>");
+        var i =1;
         var verif = true;
+        console.log(ligne.length);
         while (i<ligne.length && verif) {
-            console.log(ligne[i]+"coucou");
             verif=this.regex.test(ligne[i]);
             i++;
         }
@@ -56,11 +54,11 @@ import { User } from '../_models/user';
             alert("Pas de problème");
         }
         else {
-            alert("Erreur à la ligne"+i);
+            alert("Erreur à la ligne"+(i-1));
         }
     }
 
-    public onSave() {
+ /*   public onSave() {
         if( this.ProjectList.some( p => p.projectName == this.fileName) ) { 
             this.UserService.updateProject( this.id ,this.fileName, this.Data ) // Si le projet existe dans la liste des projet, on va update le projet.
                 .subscribe({
@@ -126,5 +124,5 @@ import { User } from '../_models/user';
                 }
             })
     }
-
+*/
 }

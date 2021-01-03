@@ -11,10 +11,11 @@ import { RegisterComponent } from './register/register.component';
 import { AccountComponent } from './account/account.component';
 import { AuthGuard } from './_helpers/auth.guard';
 
+
 const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'editor', component: EditorComponent},
-  {path:'help', component: HelpComponent},
+{path:'help', component: HelpComponent/*, canActivate: [AuthGuard]*/},
   {path:'home', component: HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'password', component:PasswordComponent},
