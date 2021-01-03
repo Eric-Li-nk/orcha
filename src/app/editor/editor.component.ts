@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { saveAs } from 'file-saver';
@@ -14,18 +14,18 @@ import { User } from '../_models/user';
     public Editor = ClassicEditor;
     public Data = "Write your code here";
     regex=/^((authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
-  /*  public fileName = "Nom de projet par défaut";
+    public fileName = "Nom de projet par défaut";
     public ProjectList: Project[];
     public LoggedUser = JSON.parse(localStorage.getItem("user")) as User;
     public id = this.LoggedUser.id;
-*/
+
     constructor(private UserService: UserService) { 
         
     }
 
     ngOnInit () {
         
-     /*   this.UserService.getProjectsTable(this.id)
+        this.UserService.getProjectsTable(this.id)
             .subscribe({
                 next: ProjectsTable => {
                     this.ProjectList = ProjectsTable as Project[];
@@ -33,7 +33,7 @@ import { User } from '../_models/user';
                 error: err => {
                     console.error(err);
                 }
-            })*/
+            })
      }
     
     public onChange ({ editor } : ChangeEvent) {
@@ -58,7 +58,7 @@ import { User } from '../_models/user';
         }
     }
 
- /*   public onSave() {
+    public onSave() {
         if( this.ProjectList.some( p => p.projectName == this.fileName) ) { 
             this.UserService.updateProject( this.id ,this.fileName, this.Data ) // Si le projet existe dans la liste des projet, on va update le projet.
                 .subscribe({
@@ -124,5 +124,5 @@ import { User } from '../_models/user';
                 }
             })
     }
-*/
+
 }

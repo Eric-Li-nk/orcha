@@ -7,5 +7,5 @@
         <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
             {{Project.content}} </li>
     </ul>
-    <a (click)="logout()">Se déconnecter</a>
+    <button type="button" (click)="logout()">Se déconnecter</button>
 </div>

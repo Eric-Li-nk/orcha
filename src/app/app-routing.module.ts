@@ -14,8 +14,8 @@ import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
   {path:'contact', component: ContactComponent},
-  {path:'editor', component: EditorComponent},
-{path:'help', component: HelpComponent/*, canActivate: [AuthGuard]*/},
+  {path:'editor', component: EditorComponent, canActivate: [AuthGuard]},
+  {path:'help', component: HelpComponent},
   {path:'home', component: HomeComponent},
   {path:'login', component:LoginComponent},
   {path:'password', component:PasswordComponent},

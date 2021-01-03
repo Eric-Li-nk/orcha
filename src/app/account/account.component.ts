@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from '../_models/project';
 import { User } from '../_models/user';
 import { UserService } from '../_services/user.service'
+import { CommonModule } from "@angular/common";
 
 @Component({
   selector: 'app-account',
