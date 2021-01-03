@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import { ChangeEvent } from '@ckeditor/ckeditor5-angular/ckeditor.component';
 import { saveAs } from 'file-saver';
 import { UserService } from '../_services/user.service';
 import { Project } from '../_models/project';
 import { User } from '../_models/user';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-editor',
@@ -13,12 +13,12 @@ import { User } from '../_models/user';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
-    regex=/^((authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
-    public fileName = "Nom de projet par défaut";
+    regex=/^((&nbsp;)|(authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/;
+    public fileName = "Project default name";
     public ProjectList: Project[];
     public LoggedUser = JSON.parse(localStorage.getItem("user")) as User;
     public id = this.LoggedUser.id;
-
+    resultat="You can start coding in Orcha !";
     constructor(private UserService: UserService) { 
         
     }
@@ -36,11 +36,6 @@ import { User } from '../_models/user';
             })
      }
     
-    public onChange ({ editor } : ChangeEvent) {
-        const data = editor.getData();
-        console.log (data);
-    }
-
     public compile() {
         var ligne=this.Data.split("<p>");
         var i =1;
@@ -51,10 +46,10 @@ import { User } from '../_models/user';
             i++;
         }
         if (verif) {
-            alert("Pas de problème");
+            this.resultat="No problem";
         }
         else {
-            alert("Erreur à la ligne"+(i-1));
+            this.resultat=("Error at line "+(i-1));
         }
     }
 
@@ -117,7 +112,7 @@ import { User } from '../_models/user';
             .subscribe({
                 next: () => {
                     this.ProjectList.splice(index,1);
-                    this.Data = "Fichier supprimé";
+                    this.Data = "File deleted";
                 },
                 error: err => {
                     console.error(err);

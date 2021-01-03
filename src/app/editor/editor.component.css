@@ -9,18 +9,22 @@ form{
 
 .bouton li {
     list-style: none;
-    display: inline;
+    display: inline-block;
     padding-left: none;
-}
-
-.bouton button {
     margin-right: 2%;
 }
 
+.bouton label {
+    text-align: bottom;
+}
+
 .bouton {
-    border: 2px solid black;
-    border-radius: 2%;
-    border-style: groove;
     padding-left: none;
 }
+
+ckeditor {
+    min-height: 200px;
+}
+
+
 

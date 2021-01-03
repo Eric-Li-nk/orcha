@@ -1,19 +1,37 @@
 <div class="editor">
     <form method="POST">
         <ul class="bouton">
-        <li><button type="button" (click)="onSave()"><img src="../../assets/images/save.png" height="25" width="35"></button></li>
-            <li><button type="button" (click)="onLoad()"><img src="../../assets/images/import.png" height="25" width="25"></button></li>
-            <select [(ngModel)]="fileName" name="filename" >
-                <option *ngFor="let Project of ProjectList" [value]=Project.projectName> {{Project.projectName}}</option>
-            </select>
-            <li><button type="file" (click)="export()"><img src="../../assets/images/run.png" height="25" width="25"></button><input type="text" name="fileName" [(ngModel)]="fileName" ></li>
-            <li>Import<input type="file" (change)="import($event.target.files)"></li> -->
-            <li><button type="button" (click)="onDelete()">Delete</button></li> -->
-            <li><button type="button" (click)="compile()"><img src="../../assets/images/run.png" height="25" width="25"></button></li>
+            <li>
+                <button type="button" (click)="onSave()"><img src="../../assets/images/save.png" height="25" width="35"></button>
+                <label>Save</label>
+            </li>
+            <li>
+                <button type="button" (click)="onLoad()"><img src="../../assets/images/import.png" height="25" width="25"></button>
+                <label>Load</label>
+            </li>
+            <li>
+                <select [(ngModel)]="fileName" name="filename" >
+                    <option *ngFor="let Project of ProjectList" [value]=Project.projectName> {{Project.projectName}}</option>
+                </select>
+                <label>Select project</label>
+            </li>
+            <li>
+                <button type="file" (click)="export()"><img src="../../assets/images/run.png" height="25" width="25"></button><input type="text" name="fileName" [(ngModel)]="fileName" >
+                <label>Export</label>
+            </li>
+            <li>
+                <input type="file" (change)="import($event.target.files)">
+                <label>Import</label>
+            </li>
+            <li>
+                <button type="button" (click)="onDelete()">Delete</button>
+                <label>Delete project</label>
+            </li>
         </ul>
-        <ckeditor #orcha name="orcha" [editor]="Editor" [data]="Data" tagName="textarea" (change)="onChange($event)"
-         [config]="{ toolbar: [  ] }" [(ngModel)]="Data"
-        ></ckeditor>
+        <ckeditor name="orcha" [editor]="Editor" [data]="Data" tagName="textarea"
+         [config]="{ toolbar: [  ] }" [(ngModel)]="Data" (ngModelChange)="compile()" ></ckeditor>
+         
+        <label>{{resultat}}</label>
     </form>
 
 </div>            
