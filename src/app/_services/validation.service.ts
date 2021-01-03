@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
+import { exit } from 'process';
 import { UserService } from './user.service'
 
 @Injectable({
@@ -8,8 +9,8 @@ import { UserService } from './user.service'
 export class ValidationService {
 
   constructor(private UserService: UserService) { 
-    //this.UserService.getUsernames().subscribe(UserList => {this.UsernameList = UserList});
-    //this.UserService.getEmails().subscribe(EmailList => {this.EmailList = EmailList});      Si on met ici c'est possible de créer un même compte si on ne charge pas la page
+    this.UserService.getUsernames().subscribe(UserList => {this.UsernameList = UserList});
+    this.UserService.getEmails().subscribe(EmailList => {this.EmailList = EmailList});
   }
 
   UsernameList: string[];

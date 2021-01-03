@@ -1,13 +1,23 @@
 <div class="editor">
-    <form action='' method="POST">
+    <form method="POST">
         <ul class="bouton">
             <li><button type="button" (click)="onSave()"><img src="../../assets/images/save.png" height="25" width="35"></button></li>
             <li><button type="button" (click)="onLoad()"><img src="../../assets/images/import.png" height="25" width="25"></button></li>
+<<<<<<< HEAD
             <li><button type="button" (click)="export()"><img src="../../assets/images/run.png" height="25" width="25"></button></li>
             <li><button type="button" (click)="compile()"><img src="../../assets/images/run.png" height="25" width="25"></button></li>
+=======
+            <select [(ngModel)]="fileName" name="filename" >
+                <option *ngFor="let Project of ProjectList" [value]=Project.projectName> {{Project.projectName}}</option>
+            </select>
+            <li><button type="file" (click)="export()"><img src="../../assets/images/run.png" height="25" width="25"></button><input type="text" name="fileName" [(ngModel)]="fileName" ></li>
+            <li>Import<input type="file" (change)="import($event.target.files)"></li>
+            <li><button type="button" (click)="onDelete()">Delete</button></li>
+>>>>>>> 112c3b13c6c61e75d4a77e2f3ea4d341988beb45
         </ul>
         <ckeditor #orcha name="orcha" [editor]="Editor" [data]="Data" tagName="textarea" (change)="onChange($event)"
          [config]="{ toolbar: [  ] }" [(ngModel)]="Data"
         ></ckeditor>
     </form>
-</div>
+
+</div>            
