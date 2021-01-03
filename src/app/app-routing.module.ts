@@ -16,12 +16,12 @@ const routes: Routes = [
   {path:'contact', component: ContactComponent},
   {path:'editor', component: EditorComponent, canActivate: [AuthGuard]},
   {path:'help', component: HelpComponent},
-  {path:'home', component: HomeComponent},
+  {path:'orcha', component: OrchaComponent},
   {path:'login', component:LoginComponent},
   {path:'password', component:PasswordComponent},
   {path:'register', component:RegisterComponent},
   {path:'account', component:AccountComponent, canActivate: [AuthGuard]},
-  {path:'', component:OrchaComponent}
+  {path:'', component:HomeComponent}
 ];
 
 @NgModule({

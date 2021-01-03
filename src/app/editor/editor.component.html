@@ -28,9 +28,9 @@
                 <label>Delete project</label>
             </li>
         </ul>
-        <ckeditor name="orcha" [editor]="Editor" [data]="Data" tagName="textarea"
+        <ckeditor #orcha name="orcha" [editor]="Editor" [data]="Data" tagName="textarea"
          [config]="{ toolbar: [  ] }" [(ngModel)]="Data" (ngModelChange)="compile()" ></ckeditor>
-         
+
         <label>{{resultat}}</label>
     </form>
 
