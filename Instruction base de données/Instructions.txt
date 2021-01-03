@@ -1,4 +1,4 @@
-Mettez le dossier "api" dans le dossier "www" de wamp manager
+Mettez le dossier "api" dans le dossier "www" de wampserver
 
 Pour créer la base de données vous pouvez utilisez mysql de wampserver ou télécharger mysql directement
 Par défaut j'ai mit comme utilisateur le root et le mot de passe c'est "123456789"
