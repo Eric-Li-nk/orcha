@@ -10,8 +10,10 @@ if(isset($postdata) && !empty($postdata)) {
 
     if($user == false) {
         http_response_code(404);
-    } else {
+    } elseif (password_verify($data->password,$user["password"])) {
         echo json_encode($user);
+    } else {
+        http_response_code(404);
     }
 }
 ?>

@@ -18,9 +18,9 @@ Pour se connecter directement à la base de données :
 
 CREATE TABLE IF NOT EXISTS Utilisateurs(
     id INT(10) AUTO_INCREMENT, 
-    username VARCHAR(30) NOT NULL,
-    password VARCHAR(30) NOT NULL,
-    email VARCHAR(30),
+    username VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(255),
     PRIMARY KEY (id)
 );
 

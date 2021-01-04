@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
           error: err => {
             this.submitted = false;
             this.LoginNotValid = true;
+            console.error(err);
           }
     });
     

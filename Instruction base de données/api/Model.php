@@ -51,9 +51,10 @@ class Model {
     }
 
     public function addUser($data){
+        $password = password_hash(trim($data->data->password),PASSWORD_DEFAULT);
         $requete = $this->bd->prepare("INSERT INTO Utilisateurs (username,password,email) VALUES (:username,:password,:email)");
         $requete->bindValue(':username',trim($data->data->username));
-        $requete->bindValue(':password',trim($data->data->password));
+        $requete->bindValue(':password',$password);
         $requete->bindValue(':email',trim($data->data->email));
         $requete->execute();
     }
@@ -92,9 +93,8 @@ class Model {
     }
 
     public function findUser($data){
-        $requete = $this->bd->prepare("SELECT * FROM Utilisateurs where username=:username and password=:password");
+        $requete = $this->bd->prepare("SELECT * FROM Utilisateurs where username=:username");
         $requete->bindValue(':username',trim($data->username));
-        $requete->bindValue(':password',trim($data->password));
         $requete->execute();
         return $requete->fetch(PDO::FETCH_ASSOC);
 
