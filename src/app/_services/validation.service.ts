@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AbstractControl } from '@angular/forms';
-import { exit } from 'process';
+import { User } from '../_models/user';
 import { UserService } from './user.service'
 
 @Injectable({
@@ -9,8 +9,15 @@ import { UserService } from './user.service'
 export class ValidationService {
 
   constructor(private UserService: UserService) { 
-    this.UserService.getUsernames().subscribe(UserList => {this.UsernameList = UserList});
-    this.UserService.getEmails().subscribe(EmailList => {this.EmailList = EmailList});
+    this.UserService.getUsernames()
+    .subscribe({
+      next: UserList => {this.UsernameList = UserList;},
+      error: err => {this.UsernameList = [""];}
+    });
+    this.UserService.getEmails().subscribe({
+      next: EmailList => {this.EmailList = EmailList;},
+      error: err => {this.EmailList = [""]}
+    });
   }
 
   UsernameList: string[];
