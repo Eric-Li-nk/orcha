@@ -37,7 +37,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     }
 
     public compile() {
-        var ligne = this.Data.split("<p>");
+        var ligne = this.Data.split("<p>"&&"<br>");
         var i = 1;
         var verif = true;
         while (i < ligne.length && verif) {
@@ -48,9 +48,10 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
             this.resultat = "No problem";
         }
         else {
-            this.resultat = ("Error at line " + (i - 1));
+            this.resultat = ("Error at line " + (i-1));
         }
     }
+
 
     public onSave() {
         if (this.ProjectList.some(p => p.projectName == this.fileName)) {
