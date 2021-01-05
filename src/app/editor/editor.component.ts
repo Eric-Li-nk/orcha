@@ -13,7 +13,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 }) export class EditorComponent implements OnInit {
     public Editor = ClassicEditor;
     public Data = "Write your code here";
-    regex = /^((&nbsp;)|(authors)|(compute)|(description)|(title)|(domain)|(receive)|(send)|(title)|(version))/g;
+    regex =  /^((&nbsp;)|(authors)|(compute (?<application>.*?)( with (?<parameters>.*))?)|(description)|(domain)|(receive)|(send)|(title)|(version))/;
     public fileName = "Project default name";
     public ProjectList: Project[];
     public LoggedUser = JSON.parse(localStorage.getItem("user")) as User;
@@ -37,13 +37,14 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
     }
 
     public compile() {
-        var ligne = this.Data.split("<p>"&&"<br>");
-        var i = 1;
+        var ligne = this.Data.split("<p>");
+        var i = 1
         var verif = true;
         while (i < ligne.length && verif) {
             verif = this.regex.test(ligne[i]);
             i++;
         }
+
         if (verif) {
             this.resultat = "No problem";
         }
