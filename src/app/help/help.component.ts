@@ -22,11 +22,11 @@ export class HelpComponent implements OnInit {
 
     /*Réponses */
 
-    this.repliste.push("Reponse question 1");
-    this.repliste.push("Reponse question 2");
-    this.repliste.push("Reponse question 3");
-    this.repliste.push("Reponse question 4");
-    this.repliste.push("Reponse question 5")
+   this.repliste.push("To create click on login and sign up");
+    this.repliste.push("To save your files click on saves logo");
+    this.repliste.push("All the information for the tool bar is on the home page");
+    this.repliste.push("To access your files click on files logo");
+    this.repliste.push("To recover your password click on login and password");
 
 
 
