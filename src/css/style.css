@@ -52,18 +52,18 @@ nav a{
 }
 
 .menu_Help:hover{
+  border-top: 5px solid cyan;
+  background-color: rgba(100,150,150,0.30);
+}
+
+.menu_Login:hover{
   border-top: 5px solid blue;
   background-color: rgba(100,100,200,0.30);
 }
 
-.menu_Login:hover{
+.menu_Account:hover{
   border-top: 5px solid purple;
   background-color: rgba(200,100,200,0.30);
-}
-
-.menu_Account:hover{
-  border-top: 5px solid black;
-  background-color: rgba(90, 43, 90, 0.3);
 }
 
 /*CSS Contenu*/

@@ -1,11 +1,14 @@
 <div class="account">
-    <h2>Vos informations</h2>
-    <ul>
-        <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
-    </ul>
-    <ul>
-        <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
+    <h1>Account</h1>
+    <div class="account_partie1">
+        <h2>Vos informations</h2>
+        <ul>
+            <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
+        </ul>
+        <ul>
+            <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
             {{Project.content}} </li>
-    </ul>
-    <button type="button" (click)="logout()">Se déconnecter</button>
+        </ul>
+        <button type="button" (click)="logout()">Se déconnecter</button>
+    </div>
 </div>
