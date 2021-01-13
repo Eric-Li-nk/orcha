@@ -1,3 +1,44 @@
 .account_partie1{
     text-align:center;  
 }
+
+.account_partie1 ul{
+    background: #ff9999;
+    padding: 20px;
+}
+    
+.account_partie1 ul li{
+    list-style: square;
+    background: #ffe5e5;
+    padding: 5px;
+    margin-left: 35px;
+}
+
+.account_partie2{
+    text-align:center;  
+}
+
+.account_partie2 ul{
+    background: #3399ff;
+    padding: 20px;
+}
+
+.account_partie2 ul li{
+    list-style: none;
+    background: #cce5ff;
+}
+
+.account_partie3{
+    text-align:center;  
+}
+
+button{
+    background-color: #1177d1;
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}

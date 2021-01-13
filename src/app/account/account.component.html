@@ -5,10 +5,14 @@
         <ul>
             <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
         </ul>
+    </div>
+    <div class="account_partie2">
         <ul>
             <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
             {{Project.content}} </li>
         </ul>
+    </div>
+    <div class="account_partie3">
         <button type="button" (click)="logout()">Se déconnecter</button>
     </div>
 </div>
