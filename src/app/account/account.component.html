@@ -1,18 +1,21 @@
 <div class="account">
     <h1>Account</h1>
     <div class="account_partie1">
-        <h2>Vos informations</h2>
-        <ul>
-            <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
-        </ul>
+        <div class="partie1_left">
+            <h2>Vos informations</h2>
+            <ul>
+                <li *ngFor="let key of keys"> {{key}} : {{LoggedUser[key]}} </li>
+            </ul>
+        </div>
+        <div class="partie1_right">
+            <h2>Vos projets</h2>
+            <ul>
+                <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
+                {{Project.content}} </li>
+            </ul>
+        </div>
     </div>
     <div class="account_partie2">
-        <ul>
-            <li *ngFor="let Project of ProjectsTable"> {{Project.projectName}} :<br/> 
-            {{Project.content}} </li>
-        </ul>
-    </div>
-    <div class="account_partie3">
         <button type="button" (click)="logout()">Se déconnecter</button>
     </div>
 </div>
