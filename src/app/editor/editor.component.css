@@ -1,25 +1,42 @@
 div {
-    width: 100%;
+    width: 80%;
     height: 100%;
+    margin: auto;
+}
+
+p{
+    text-align: center;
 }
 
 form{
     margin: 20px;
 }
 
+.bouton{
+    list-style: none;
+    border: 1px solid var(--ck-color-base-border);
+    padding-left: 10px;
+    margin: 0%;
+}
+
 .bouton li {
     list-style: none;
     display: inline-block;
-    padding-left: none;
-    margin-right: 2%;
+    margin: 10px;
 }
 
 .bouton label {
-    text-align: bottom;
+    text-decoration: none;
+    padding : 5px;
 }
 
-.bouton {
-    padding-left: none;
+.bouton_select{
+    width: 100px;
+    height: 25px;
+}
+
+.name_project{
+    margin-left: 5px;
 }
 
 ckeditor {
